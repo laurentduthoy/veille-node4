@@ -11,8 +11,8 @@
      "id": 2   
    },
    { 
-      "nom" : "Luc Marcil",
+     "nom" : "Luc Marcil",
      "telephone" : "514-222-9233",
      "courriel" : "lmarcil@cmaisonneuve.qc.ca"
      "id": 3    
-   },,{"prenom":"allo","nom":"allo","courriel":"estt3","telephone":"test33"}
+   }

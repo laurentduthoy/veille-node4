@@ -9,10 +9,14 @@ const transform_en_tableau = (collection) => {
 
 	for(elm of collection){
 
+		html += "<th>" + elm + "<th>";
+		html += "<tr>";
 		for(p in elm){
+			html += "<tr>";
+			html += "<td>"+ elm[p] +"</td>";
 
 		}
-
+		html += "</tr>";
 	}
 
 	html += "</table>";
