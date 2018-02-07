@@ -30,8 +30,8 @@ console.log(reponse);
 
  const fs = require("fs");
  let data = fs.readFileSync('public/data/membres.txt');
-
- data.push(res.end(JSON.stringify(reponse)));
+console.log(data);
+ //data.push(res.end(JSON.stringify(reponse)));
 
 })
 
