@@ -25,13 +25,16 @@ console.log('la route /traiter_get')
  courriel:req.query.courriel,
  telephone:req.query.telephone
  };
-console.log(reponse);
- //res.end(JSON.stringify(reponse));
 
- const fs = require("fs");
- let data = fs.readFileSync('public/data/membres.txt');
-console.log(data);
- //data.push(res.end(JSON.stringify(reponse)));
+ res.end(JSON.stringify(reponse));
+
+const fs = require('fs');
+
+	fs.appendFile('membres.txt', res.end(JSON.stringify(reponse)),  (err) => {
+	  if (err) throw err;
+	  console.log('Sauvegardé');
+	});
+
 
 })
 
