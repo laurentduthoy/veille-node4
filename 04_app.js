@@ -28,11 +28,11 @@ console.log('la route /traiter_get')
 
  res.end(JSON.stringify(reponse));
 
-const fs = require('fs');
+	const fs = require('fs');
 
-	fs.appendFile('membres.txt', res.end(JSON.stringify(reponse)),  (err) => {
+	fs.appendFile('public/data/membres.txt',  ',' + JSON.stringify(reponse),  (err) => {
 	  if (err) throw err;
-	  console.log('Sauvegardé');
+	  //console.log('Sauvegardé');
 	});
 
 
@@ -40,6 +40,13 @@ const fs = require('fs');
 
 //==================================Route :membres
 app.get("membres",(req,res)=> {
+	const fs = require('fs');
+ 	fs.readFile('public/data/membres.txt', 'utf8',  (err, data) => {
+ 		if (err) throw err;
+
+ 		console.log("les données sont: "data);
+ });
+}
 
 });
 
