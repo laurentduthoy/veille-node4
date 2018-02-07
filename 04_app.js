@@ -26,7 +26,13 @@ console.log('la route /traiter_get')
  telephone:req.query.telephone
  };
 console.log(reponse);
- res.end(JSON.stringify(reponse));
+ //res.end(JSON.stringify(reponse));
+
+ const fs = require("fs");
+ let data = fs.readFileSync('public/data/membres.txt');
+
+ data.push(res.end(JSON.stringify(reponse)));
+
 })
 
 //==================================Route :membres
