@@ -19,7 +19,7 @@ app.get('/traiter_get', function (req, res) {
 console.log('la route /traiter_get')
 
 // on utilise l'objet req.query pour récupérer les données GET
- reponse = {
+ let reponse = {
  prenom:req.query.prenom,
  nom:req.query.nom,
  courriel:req.query.courriel,
@@ -40,13 +40,12 @@ console.log('la route /traiter_get')
 
 //==================================Route :membres
 app.get("membres",(req,res)=> {
-	const fs = require('fs');
- 	fs.readFile('public/data/membres.txt', 'utf8',  (err, data) => {
- 		if (err) throw err;
-
- 		console.log("les données sont: "data);
+	fs.readFile('public/data/membres.txt', 'utf8', (err, data) => {
+		 if (err) throw err;
+	 	obj = JSON.parse("["+data+"]");
+	});
  });
-}
+
 
 });
 
