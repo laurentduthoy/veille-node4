@@ -1,6 +1,24 @@
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
+
+
+const transform_en_tableau = (collection) => {
+
+	let html = "<table>"
+
+	for(elm of collection){
+
+		for(p in elm){
+
+		}
+
+	}
+
+	html += "</table>";
+	return html;
+}
+
 //=======================================================Route /html/01form.html
 app.get('/formulaire', function (req, res) {
  console.log(__dirname);
@@ -42,12 +60,14 @@ console.log('la route /traiter_get')
 app.get("membres",(req,res)=> {
 	fs.readFile('public/data/membres.txt', 'utf8', (err, data) => {
 		 if (err) throw err;
-	 	obj = JSON.parse("["+data+"]");
+	 	let collection = JSON.parse("["+data+"]");
+
+	 	res.end(transform_en_tableau(collection))
 	});
  });
 
 
-});
+};
 
 var server = app.listen(8081, function () {
  var host = server.address().address
